@@ -7,47 +7,107 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background-color: #0a0a0a;
+            color: #f5f5f5;
+        }
+
+        .vercel-bg {
+            background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+        }
+
+        .accent-blue {
+            color: #0070f3;
+        }
+
+        .button-primary {
+            background-color: #ffffff;
+            color: #000000;
+            border: 1px solid #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        .button-primary:hover {
+            background-color: #000000;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+            box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2);
+        }
+
+        .button-secondary {
+            background-color: transparent;
+            color: #f5f5f5;
+            border: 1px solid #404040;
+            transition: all 0.3s ease;
+        }
+
+        .button-secondary:hover {
+            border-color: #0070f3;
+            color: #0070f3;
+            background-color: rgba(0, 112, 243, 0.05);
+        }
+
+        .card {
+            background: #1a1a1a;
+            border: 1px solid #333333;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: #0070f3;
+            box-shadow: 0 12px 24px rgba(0, 112, 243, 0.15);
+        }
+
+        .divider {
+            border-color: #333333;
+        }
+
         #root {
             min-height: 0 !important;
         }
     </style>
-    
 </head>
 
-
-<body class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-x-hidden !overflow-y-auto">
+<body class="vercel-bg !overflow-y-auto">
     <!-- Navigation -->
-    <nav class="fixed w-full top-0 z-50 backdrop-blur-md bg-slate-900/80 border-b border-slate-700/50">
+    <nav class="fixed w-full top-0 z-50 backdrop-blur-sm bg-black/80 border-b divider">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                    <i class="fas fa-brain text-white text-lg"></i>
+                <div class="w-8 h-8 bg-black rounded flex items-center justify-center">
+                    <i class="fas fa-brain text-white text-sm"></i>
                 </div>
-                <span class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">IntelliServe</span>
+                <span class="text-xl font-bold accent-blue">IntelliServe</span>
             </div>
-            <button onclick="clickStartChat()" class="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 rounded-lg font-semibold transition-all transform hover:scale-105">
+            <button onclick="clickStartChat()" class="button-primary px-6 py-2 rounded-lg font-medium text-sm">
                 Try Now
             </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center px-6 pt-20">
-        <div class="max-w-6xl mx-auto text-center space-y-8">
-            <div class="space-y-4">
-                <h1 class="text-6xl font-bold leading-tight bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                    Transform Customer Feedback Into Action
+    <section class="min-h-screen flex items-center justify-center px-6 pt-20 vercel-bg">
+        <div class="max-w-5xl mx-auto text-center space-y-8">
+            <div class="space-y-6">
+                <h1 class="text-7xl font-bold leading-tight">
+                    Transform Customer<br/>Feedback Into Action
                 </h1>
-                <p class="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
                     IntelliServe is a 24/7 AI triage agent that detects critical issues in user feedback and instantly creates prioritized tickets in Zendesk or Jira to boost retention.
                 </p>
             </div>
 
             <div class="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-                <button onclick="clickStartChat()" class="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 rounded-lg font-bold text-lg transition-all transform hover:scale-105 shadow-lg shadow-purple-500/50">
+                <button onclick="clickStartChat()" class="button-primary px-8 py-3 rounded-lg font-medium transition-all">
                     <i class="fas fa-comments mr-2"></i>Start Chatting
                 </button>
-                <button onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})" class="px-8 py-4 border-2 border-slate-400 hover:border-blue-400 rounded-lg font-bold text-lg transition-all">
+                <button onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})" class="button-secondary px-8 py-3 rounded-lg font-medium">
                     Learn More
                 </button>
             </div>
@@ -55,106 +115,106 @@
             <!-- Stats -->
             <div class="grid grid-cols-3 gap-8 pt-16 text-center">
                 <div class="space-y-2">
-                    <p class="text-4xl font-bold text-blue-400">24/7</p>
-                    <p class="text-slate-400">Continuous Monitoring</p>
+                    <p class="text-4xl font-bold">24/7</p>
+                    <p class="text-gray-500">Continuous Monitoring</p>
                 </div>
                 <div class="space-y-2">
-                    <p class="text-4xl font-bold text-purple-400">Instant</p>
-                    <p class="text-slate-400">Ticket Creation</p>
+                    <p class="text-4xl font-bold">Instant</p>
+                    <p class="text-gray-500">Ticket Creation</p>
                 </div>
                 <div class="space-y-2">
-                    <p class="text-4xl font-bold text-pink-400">Intelligent</p>
-                    <p class="text-slate-400">Issue Classification</p>
+                    <p class="text-4xl font-bold accent-blue">Intelligent</p>
+                    <p class="text-gray-500">Issue Classification</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="py-24 px-6 border-t border-slate-700/50">
+    <section id="features" class="py-24 px-6 border-t divider">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-16">Powered by Advanced Intelligence</h2>
+            <h2 class="text-5xl font-bold text-center mb-16">Powered by Advanced Intelligence</h2>
             
             <div class="grid md:grid-cols-2 gap-8 mb-16">
-                <div class="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-2xl p-8 hover:border-blue-500/50 transition-all">
-                    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mb-6">
-                        <i class="fas fa-magic text-white text-2xl"></i>
+                <div class="card rounded-xl p-8">
+                    <div class="w-12 h-12 bg-black rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-magic text-white text-xl"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-4">Intelligent Routing</h3>
-                    <p class="text-slate-300">Automatically distinguishes technical issues from general support requests and routes them to the right teams without manual triage.</p>
+                    <p class="text-gray-400">Automatically distinguishes technical issues from general support requests and routes them to the right teams without manual triage.</p>
                 </div>
 
-                <div class="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-2xl p-8 hover:border-purple-500/50 transition-all">
-                    <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center mb-6">
-                        <i class="fas fa-zap text-white text-2xl"></i>
+                <div class="card rounded-xl p-8">
+                    <div class="w-12 h-12 bg-black rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-zap text-white text-xl"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-4">Rapid Automation</h3>
-                    <p class="text-slate-300">Engineering teams receive clearly defined, priority-based Jira tasks while support gets instantly generated Zendesk tickets.</p>
+                    <p class="text-gray-600">Engineering teams receive clearly defined, priority-based Jira tasks while support gets instantly generated Zendesk tickets.</p>
                 </div>
 
-                <div class="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-2xl p-8 hover:border-pink-500/50 transition-all">
-                    <div class="w-14 h-14 bg-gradient-to-br from-pink-500 to-rose-600 rounded-lg flex items-center justify-center mb-6">
-                        <i class="fas fa-bell text-white text-2xl"></i>
+                <div class="card rounded-xl p-8">
+                    <div class="w-12 h-12 bg-black rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-bell text-white text-xl"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-4">Customer Notifications</h3>
-                    <p class="text-slate-300">Complete with instant customer notifications to close the communication loop and improve satisfaction.</p>
+                    <p class="text-gray-600">Complete with instant customer notifications to close the communication loop and improve satisfaction.</p>
                 </div>
 
-                <div class="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-2xl p-8 hover:border-blue-500/50 transition-all">
-                    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center mb-6">
-                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                <div class="card rounded-xl p-8">
+                    <div class="w-12 h-12 bg-black rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-white text-xl"></i>
                     </div>
                     <h3 class="text-2xl font-bold mb-4">Scale Support Operations</h3>
-                    <p class="text-slate-300">Transform scattered feedback into structured tasks, enabling companies to scale support operations effortlessly.</p>
+                    <p class="text-gray-600">Transform scattered feedback into structured tasks, enabling companies to scale support operations effortlessly.</p>
                 </div>
             </div>
 
             <!-- Main Benefits -->
-            <div class="bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-slate-700 rounded-2xl p-12">
+            <div class="card border divider rounded-xl p-12">
                 <h3 class="text-2xl font-bold mb-8 text-center">Why Choose IntelliServe?</h3>
                 <div class="grid md:grid-cols-2 gap-6">
                     <div class="flex gap-4">
                         <div class="flex-shrink-0">
-                            <div class="flex items-center justify-center h-10 w-10 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600">
-                                <i class="fas fa-check text-white"></i>
+                            <div class="flex items-center justify-center h-10 w-10 rounded-lg bg-black">
+                                <i class="fas fa-check text-white text-sm"></i>
                             </div>
                         </div>
                         <div>
-                            <h4 class="font-semibold mb-2">Reduce Response Time</h4>
-                            <p class="text-slate-300 text-sm">Automation reduces manual triage by up to 90%</p>
+                            <h4 class="font-semibold mb-1">Reduce Response Time</h4>
+                            <p class="text-gray-600 text-sm">Automation reduces manual triage by up to 90%</p>
                         </div>
                     </div>
                     <div class="flex gap-4">
                         <div class="flex-shrink-0">
-                            <div class="flex items-center justify-center h-10 w-10 rounded-lg bg-gradient-to-br from-purple-500 to-pink-600">
-                                <i class="fas fa-check text-white"></i>
+                            <div class="flex items-center justify-center h-10 w-10 rounded-lg bg-black">
+                                <i class="fas fa-check text-white text-sm"></i>
                             </div>
                         </div>
                         <div>
-                            <h4 class="font-semibold mb-2">Prevent Overlooked Issues</h4>
-                            <p class="text-slate-300 text-sm">Every concern is tracked and prioritized</p>
+                            <h4 class="font-semibold mb-1">Prevent Overlooked Issues</h4>
+                            <p class="text-gray-600 text-sm">Every concern is tracked and prioritized</p>
                         </div>
                     </div>
                     <div class="flex gap-4">
                         <div class="flex-shrink-0">
-                            <div class="flex items-center justify-center h-10 w-10 rounded-lg bg-gradient-to-br from-pink-500 to-rose-600">
-                                <i class="fas fa-check text-white"></i>
+                            <div class="flex items-center justify-center h-10 w-10 rounded-lg bg-black">
+                                <i class="fas fa-check text-white text-sm"></i>
                             </div>
                         </div>
                         <div>
-                            <h4 class="font-semibold mb-2">Improve Product Quality</h4>
-                            <p class="text-slate-300 text-sm">Structured insights drive better product decisions</p>
+                            <h4 class="font-semibold mb-1">Improve Product Quality</h4>
+                            <p class="text-gray-600 text-sm">Structured insights drive better product decisions</p>
                         </div>
                     </div>
                     <div class="flex gap-4">
                         <div class="flex-shrink-0">
-                            <div class="flex items-center justify-center h-10 w-10 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-600">
-                                <i class="fas fa-check text-white"></i>
+                            <div class="flex items-center justify-center h-10 w-10 rounded-lg bg-black">
+                                <i class="fas fa-check text-white text-sm"></i>
                             </div>
                         </div>
                         <div>
-                            <h4 class="font-semibold mb-2">Boost Customer Satisfaction</h4>
-                            <p class="text-slate-300 text-sm">Faster, smarter responses lead to happier customers</p>
+                            <h4 class="font-semibold mb-1">Boost Customer Satisfaction</h4>
+                            <p class="text-gray-600 text-sm">Faster, smarter responses lead to happier customers</p>
                         </div>
                     </div>
                 </div>
@@ -163,63 +223,82 @@
     </section>
 
     <!-- Chat Section -->
-    <section id="chat-section" class="py-24 px-6 border-t border-slate-700/50">
+    <section id="chat-section" class="py-24 px-6 border-t divider">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold mb-4">Experience IntelliServe</h2>
-                <p class="text-slate-300 text-lg">Chat with our AI agent and see how it transforms customer feedback into actionable insights</p>
+                <h2 class="text-5xl font-bold mb-4">Experience IntelliServe</h2>
+                <p class="text-gray-600 text-lg">Watch our demo video and chat with our AI agent to see how it transforms customer feedback into actionable insights</p>
             </div>
             
+            <!-- Demo Video -->
+            <div class="mb-12">
+                <div class="relative rounded-xl overflow-hidden shadow-lg" style="padding-bottom: 56.25%; height: 0;">
+                    <iframe 
+                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                        src="https://www.youtube.com/embed/PzLC8kuTpec" 
+                        title="IntelliServe Demo" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- Chat Widget -->
+            <div class="text-center mb-8">
+                <h3 class="text-2xl font-bold mb-2">Try It Live</h3>
+                <p class="text-gray-500">Interact with our AI agent below</p>
+            </div>
             <div id="root" style="min-height: 600px; position: relative;"></div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="py-24 px-6 border-t border-slate-700/50">
+    <section class="bg-vercel py-24 px-6 border-t divider">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-6">Ready to Transform Your Customer Support?</h2>
-            <p class="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+            <h2 class="text-5xl font-bold mb-6">Ready to Transform Your Customer Support?</h2>
+            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
                 Let IntelliServe handle your customer feedback triage and watch your response times drop and satisfaction scores rise.
             </p>
-            <button onclick="clickStartChat()" class="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 rounded-lg font-bold text-lg transition-all transform hover:scale-105 shadow-lg shadow-purple-500/50">
+            <button onclick="clickStartChat()" class="button-primary px-8 py-3 rounded-lg font-medium transition-all">
                 <i class="fas fa-comments mr-2"></i>Start Free Trial
             </button>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-700/50 py-12 px-6 bg-slate-900/50">
+    <footer class="border-t divider py-12 px-6 bg-vercel">
         <div class="max-w-6xl mx-auto">
             <div class="grid md:grid-cols-4 gap-8 mb-8">
                 <div>
                     <h4 class="font-bold mb-4 flex items-center gap-2">
-                        <i class="fas fa-brain text-blue-400"></i>IntelliServe
+                        <i class="fas fa-brain accent-blue"></i>IntelliServe
                     </h4>
-                    <p class="text-slate-400 text-sm">AI-powered customer feedback triage for modern teams</p>
+                    <p class="text-gray-500 text-sm">AI-powered customer feedback triage for modern teams</p>
                 </div>
                 <div>
                     <h5 class="font-semibold mb-4">Product</h5>
-                    <ul class="space-y-2 text-slate-400 text-sm">
-                        <li><a href="#features" class="hover:text-blue-400 transition">Features</a></li>
-                        <li><a href="#chat-section" class="hover:text-blue-400 transition">Pricing</a></li>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li><a href="#features" class="hover:text-black transition">Features</a></li>
+                        <li><a href="#chat-section" class="hover:text-black transition">Pricing</a></li>
                     </ul>
                 </div>
                 <div>
                     <h5 class="font-semibold mb-4">Company</h5>
-                    <ul class="space-y-2 text-slate-400 text-sm">
-                        <li><a href="#" class="hover:text-blue-400 transition">About</a></li>
-                        <li><a href="#" class="hover:text-blue-400 transition">Blog</a></li>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li><a href="#" class="hover:text-black transition">About</a></li>
+                        <li><a href="#" class="hover:text-black transition">Blog</a></li>
                     </ul>
                 </div>
                 <div>
                     <h5 class="font-semibold mb-4">Legal</h5>
-                    <ul class="space-y-2 text-slate-400 text-sm">
-                        <li><a href="#" class="hover:text-blue-400 transition">Privacy</a></li>
-                        <li><a href="#" class="hover:text-blue-400 transition">Terms</a></li>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li><a href="#" class="hover:text-black transition">Privacy</a></li>
+                        <li><a href="#" class="hover:text-black transition">Terms</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-slate-700/50 pt-8 text-center text-slate-400 text-sm">
+            <div class="border-t divider pt-8 text-center text-gray-500 text-sm">
                 <p>&copy; 2024 IntelliServe. All rights reserved.</p>
             </div>
         </div>
@@ -244,7 +323,6 @@
             }
         };
 
-        // Load Watson Orchestrate after page loads
         window.addEventListener('load', function() {
             const script = document.createElement('script');
             script.src = `${window.wxOConfiguration.hostURL}/wxochat/wxoLoader.js?embed=true`;
@@ -262,14 +340,9 @@
             document.head.appendChild(script);
         });
 
-
         function clickStartChat() {
-            // Scroll to chat section first
             document.getElementById('chat-section').scrollIntoView({ behavior: 'smooth' });
-            
-            // Try to find and click the Watson chat launcher after a short delay
             setTimeout(function() {
-                // Look for Watson chat launcher button
                 const launcherButton = document.querySelector('[data-testid="launcher-button"]') || 
                                       document.querySelector('.chatButton') ||
                                       document.querySelector('[class*="launcher"]') ||
