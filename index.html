@@ -1,23 +1,287 @@
-<script>
-                window.wxOConfiguration = {
-                    orchestrationID: "d14bd513bb7b49a594dc7955d62b234b_2a460af9-3117-452c-8404-dd86512033a7",
-                    hostURL: "https://eu-de.watson-orchestrate.cloud.ibm.com/",
-                    rootElementID: "root",
-                    showLauncher: true,
-                    crn: "crn:v1:bluemix:public:watsonx-orchestrate:eu-de:a/d14bd513bb7b49a594dc7955d62b234b:2a460af9-3117-452c-8404-dd86512033a7::",
-                    deploymentPlatform: "ibmcloud",
-                    chatOptions: {
-            agentId: "e9833d3d-f6a2-49dc-904b-05b6d21086bb",
-            agentEnvironmentId: "d3116b40-198e-4158-9aca-04f0a095ad53"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntelliServe - Intelligent Customer Feedback Triage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        #root {
+            min-height: 0 !important;
         }
-                };
+    </style>
+    
+</head>
 
-                setTimeout(function () {
-                    const script = document.createElement('script');
-                    script.src = ${window.wxOConfiguration.hostURL}/wxochat/wxoLoader.js?embed=true;
-                    script.addEventListener('load', function () {
-                        wxoLoader.init();
-                    });
-                    document.head.appendChild(script);
-                }, 0);
-            </script>
+
+<body class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white overflow-x-hidden !overflow-y-auto">
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 backdrop-blur-md bg-slate-900/80 border-b border-slate-700/50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-brain text-white text-lg"></i>
+                </div>
+                <span class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">IntelliServe</span>
+            </div>
+            <button onclick="clickStartChat()" class="px-6 py-2 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 rounded-lg font-semibold transition-all transform hover:scale-105">
+                Try Now
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center px-6 pt-20">
+        <div class="max-w-6xl mx-auto text-center space-y-8">
+            <div class="space-y-4">
+                <h1 class="text-6xl font-bold leading-tight bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    Transform Customer Feedback Into Action
+                </h1>
+                <p class="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+                    IntelliServe is a 24/7 AI triage agent that detects critical issues in user feedback and instantly creates prioritized tickets in Zendesk or Jira to boost retention.
+                </p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+                <button onclick="clickStartChat()" class="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 rounded-lg font-bold text-lg transition-all transform hover:scale-105 shadow-lg shadow-purple-500/50">
+                    <i class="fas fa-comments mr-2"></i>Start Chatting
+                </button>
+                <button onclick="document.getElementById('features').scrollIntoView({behavior: 'smooth'})" class="px-8 py-4 border-2 border-slate-400 hover:border-blue-400 rounded-lg font-bold text-lg transition-all">
+                    Learn More
+                </button>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-3 gap-8 pt-16 text-center">
+                <div class="space-y-2">
+                    <p class="text-4xl font-bold text-blue-400">24/7</p>
+                    <p class="text-slate-400">Continuous Monitoring</p>
+                </div>
+                <div class="space-y-2">
+                    <p class="text-4xl font-bold text-purple-400">Instant</p>
+                    <p class="text-slate-400">Ticket Creation</p>
+                </div>
+                <div class="space-y-2">
+                    <p class="text-4xl font-bold text-pink-400">Intelligent</p>
+                    <p class="text-slate-400">Issue Classification</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-24 px-6 border-t border-slate-700/50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16">Powered by Advanced Intelligence</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                <div class="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-2xl p-8 hover:border-blue-500/50 transition-all">
+                    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-magic text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Intelligent Routing</h3>
+                    <p class="text-slate-300">Automatically distinguishes technical issues from general support requests and routes them to the right teams without manual triage.</p>
+                </div>
+
+                <div class="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-2xl p-8 hover:border-purple-500/50 transition-all">
+                    <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-zap text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Rapid Automation</h3>
+                    <p class="text-slate-300">Engineering teams receive clearly defined, priority-based Jira tasks while support gets instantly generated Zendesk tickets.</p>
+                </div>
+
+                <div class="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-2xl p-8 hover:border-pink-500/50 transition-all">
+                    <div class="w-14 h-14 bg-gradient-to-br from-pink-500 to-rose-600 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-bell text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Customer Notifications</h3>
+                    <p class="text-slate-300">Complete with instant customer notifications to close the communication loop and improve satisfaction.</p>
+                </div>
+
+                <div class="bg-slate-800/50 backdrop-blur border border-slate-700 rounded-2xl p-8 hover:border-blue-500/50 transition-all">
+                    <div class="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Scale Support Operations</h3>
+                    <p class="text-slate-300">Transform scattered feedback into structured tasks, enabling companies to scale support operations effortlessly.</p>
+                </div>
+            </div>
+
+            <!-- Main Benefits -->
+            <div class="bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-slate-700 rounded-2xl p-12">
+                <h3 class="text-2xl font-bold mb-8 text-center">Why Choose IntelliServe?</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-10 w-10 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Reduce Response Time</h4>
+                            <p class="text-slate-300 text-sm">Automation reduces manual triage by up to 90%</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-10 w-10 rounded-lg bg-gradient-to-br from-purple-500 to-pink-600">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Prevent Overlooked Issues</h4>
+                            <p class="text-slate-300 text-sm">Every concern is tracked and prioritized</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-10 w-10 rounded-lg bg-gradient-to-br from-pink-500 to-rose-600">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Improve Product Quality</h4>
+                            <p class="text-slate-300 text-sm">Structured insights drive better product decisions</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-10 w-10 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-600">
+                                <i class="fas fa-check text-white"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Boost Customer Satisfaction</h4>
+                            <p class="text-slate-300 text-sm">Faster, smarter responses lead to happier customers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Section -->
+    <section id="chat-section" class="py-24 px-6 border-t border-slate-700/50">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">Experience IntelliServe</h2>
+                <p class="text-slate-300 text-lg">Chat with our AI agent and see how it transforms customer feedback into actionable insights</p>
+            </div>
+            
+            <div id="root" style="min-height: 600px; position: relative;"></div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 px-6 border-t border-slate-700/50">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-6">Ready to Transform Your Customer Support?</h2>
+            <p class="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+                Let IntelliServe handle your customer feedback triage and watch your response times drop and satisfaction scores rise.
+            </p>
+            <button onclick="clickStartChat()" class="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 rounded-lg font-bold text-lg transition-all transform hover:scale-105 shadow-lg shadow-purple-500/50">
+                <i class="fas fa-comments mr-2"></i>Start Free Trial
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-700/50 py-12 px-6 bg-slate-900/50">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h4 class="font-bold mb-4 flex items-center gap-2">
+                        <i class="fas fa-brain text-blue-400"></i>IntelliServe
+                    </h4>
+                    <p class="text-slate-400 text-sm">AI-powered customer feedback triage for modern teams</p>
+                </div>
+                <div>
+                    <h5 class="font-semibold mb-4">Product</h5>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li><a href="#features" class="hover:text-blue-400 transition">Features</a></li>
+                        <li><a href="#chat-section" class="hover:text-blue-400 transition">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-semibold mb-4">Company</h5>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-blue-400 transition">About</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-semibold mb-4">Legal</h5>
+                    <ul class="space-y-2 text-slate-400 text-sm">
+                        <li><a href="#" class="hover:text-blue-400 transition">Privacy</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-700/50 pt-8 text-center text-slate-400 text-sm">
+                <p>&copy; 2024 IntelliServe. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Watson Orchestrate Chat Widget -->
+    <script>
+        function scrollToChat() {
+            document.getElementById('chat-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        window.wxOConfiguration = {
+            orchestrationID: "d14bd513bb7b49a594dc7955d62b234b_2a460af9-3117-452c-8404-dd86512033a7",
+            hostURL: "https://eu-de.watson-orchestrate.cloud.ibm.com",
+            rootElementID: "root",
+            showLauncher: false,
+            crn: "crn:v1:bluemix:public:watsonx-orchestrate:eu-de:a/d14bd513bb7b49a594dc7955d62b234b:2a460af9-3117-452c-8404-dd86512033a7::",
+            deploymentPlatform: "ibmcloud",
+            chatOptions: {
+                agentId: "e9833d3d-f6a2-49dc-904b-05b6d21086bb",
+                agentEnvironmentId: "d3116b40-198e-4158-9aca-04f0a095ad53"
+            }
+        };
+
+        // Load Watson Orchestrate after page loads
+        window.addEventListener('load', function() {
+            const script = document.createElement('script');
+            script.src = `${window.wxOConfiguration.hostURL}/wxochat/wxoLoader.js?embed=true`;
+            script.async = true;
+            script.addEventListener('load', function() {
+                console.log('Watson Orchestrate loaded');
+                if (window.wxoLoader) {
+                    wxoLoader.init();
+                    console.log('Watson Orchestrate initialized');
+                }
+            });
+            script.addEventListener('error', function() {
+                console.error('Failed to load Watson Orchestrate');
+            });
+            document.head.appendChild(script);
+        });
+
+
+        function clickStartChat() {
+            // Scroll to chat section first
+            document.getElementById('chat-section').scrollIntoView({ behavior: 'smooth' });
+            
+            // Try to find and click the Watson chat launcher after a short delay
+            setTimeout(function() {
+                // Look for Watson chat launcher button
+                const launcherButton = document.querySelector('[data-testid="launcher-button"]') || 
+                                      document.querySelector('.chatButton') ||
+                                      document.querySelector('[class*="launcher"]') ||
+                                      document.querySelector('[class*="chat-button"]');
+                
+                if (launcherButton) {
+                    launcherButton.click();
+                } else {
+                    console.log('Chat launcher not found yet');
+                }
+            }, 500);
+        }
+    </script>
+</body>
+</html>
