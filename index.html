@@ -130,6 +130,120 @@
         </div>
     </section>
 
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-24 px-6 border-t divider bg-black/30">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold mb-4">How It Works</h2>
+                <p class="text-gray-600 text-lg">From feedback to action in seconds</p>
+            </div>
+
+            <!-- Flow Diagram -->
+            <div class="relative">
+                <!-- Step 1: Collection -->
+                <div class="flex flex-col md:flex-row items-center gap-8 mb-12">
+                    <div class="card rounded-xl p-8 flex-1">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center shadow-lg flex-shrink-0">
+                                <i class="fas fa-comments text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <span class="text-sm text-gray-500 uppercase tracking-wide">Step 1</span>
+                                <h3 class="text-2xl font-bold">Collect Feedback</h3>
+                            </div>
+                        </div>
+                        <p class="text-gray-400">Users submit reviews, complaints, or feature requests through any channel</p>
+                    </div>
+                  
+                </div>
+
+                <!-- Step 2: AI Analysis -->
+                <div class="flex flex-col md:flex-row items-center gap-8 mb-12">
+                    <div class="card rounded-xl p-8 flex-1">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg flex-shrink-0">
+                                <i class="fas fa-brain text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <span class="text-sm text-gray-500 uppercase tracking-wide">Step 2</span>
+                                <h3 class="text-2xl font-bold">AI Analysis</h3>
+                            </div>
+                        </div>
+                        <p class="text-gray-400">IntelliServe processes feedback and intelligently classifies it as either a support request or technical issue</p>
+                    </div>
+                    
+                </div>
+
+                <!-- Step 3: Smart Routing -->
+                <div class="grid md:grid-cols-2 gap-8 mb-12">
+                    <!-- Support Path -->
+                    <div class="card rounded-xl p-8 border-2 border-green-500/30">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center shadow-lg flex-shrink-0">
+                                <i class="fas fa-headset text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <span class="text-sm text-green-400 uppercase tracking-wide">Support Request</span>
+                                <h3 class="text-xl font-bold">Zendesk Ticket</h3>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 text-gray-400 text-sm">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-green-500 mt-1"></i>
+                                <span>Create support ticket in Zendesk</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-green-500 mt-1"></i>
+                                <span>Send email to customer: "Your support ticket has been created"</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-green-500 mt-1"></i>
+                                <span>Assign to support team</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Technical Path -->
+                    <div class="card rounded-xl p-8 border-2 border-orange-500/30">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center shadow-lg flex-shrink-0">
+                                <i class="fas fa-bug text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <span class="text-sm text-orange-400 uppercase tracking-wide">Bug/Issue</span>
+                                <h3 class="text-xl font-bold">Jira Issue</h3>
+                            </div>
+                        </div>
+                        <ul class="space-y-2 text-gray-400 text-sm">
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-orange-500 mt-1"></i>
+                                <span>Create issue in Jira with priority</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-orange-500 mt-1"></i>
+                                <span>Send email to product team: "Bug reported in product"</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <i class="fas fa-check text-orange-500 mt-1"></i>
+                                <span>Assign to engineering team</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Step 4: Resolution -->
+                <div class="card rounded-xl p-8 text-center">
+                    <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center shadow-lg mx-auto mb-4">
+                        <i class="fas fa-check-circle text-white text-xl"></i>
+                    </div>
+                    <span class="text-sm text-gray-500 uppercase tracking-wide">Step 4</span>
+                    <h3 class="text-2xl font-bold mb-2">Quick Resolution</h3>
+                    <p class="text-gray-400 max-w-2xl mx-auto">Teams work on properly categorized, prioritized issues while customers stay informed throughout the process</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Features Section -->
     <section id="features" class="py-24 px-6 border-t divider">
         <div class="max-w-6xl mx-auto">
@@ -235,7 +349,7 @@
                 <div class="relative rounded-xl overflow-hidden shadow-lg" style="padding-bottom: 56.25%; height: 0;">
                     <iframe 
                         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-                        src="https://www.youtube.com/embed/q3HCMpbzNCE" 
+                        src="https://www.youtube.com/embed/PzLC8kuTpec" 
                         title="IntelliServe Demo" 
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
