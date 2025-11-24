@@ -93,12 +93,18 @@
 
     <!-- Hero Section -->
     <section class="min-h-screen flex items-center justify-center px-6 pt-20 vercel-bg">
-        <div class="max-w-5xl mx-auto text-center space-y-8">
-            <div class="space-y-6">
-                <h1 class="text-7xl font-bold leading-tight">
-                    Transform Customer<br/>Feedback Into Action
+        <div class="max-w-6xl mx-auto text-center space-y-10">
+            <div class="space-y-8">
+                <div class="inline-block">
+                    <span class="text-sm font-semibold text-blue-400 bg-blue-500/10 px-4 py-2 rounded-full border border-blue-500/20">AI-Powered Support Automation</span>
+                </div>
+                <h1 class="text-7xl md:text-8xl font-extrabold leading-tight">
+                    <span class="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+                        Transform Customer
+                    </span><br/>
+                    <span class="text-white">Feedback Into Action</span>
                 </h1>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
                     IntelliServe is a 24/7 AI triage agent that detects critical issues in user feedback and instantly creates prioritized tickets in Zendesk or Jira to boost retention.
                 </p>
             </div>
@@ -113,222 +119,301 @@
             </div>
 
             <!-- Stats -->
-            <div class="grid grid-cols-3 gap-8 pt-16 text-center">
-                <div class="space-y-2">
-                    <p class="text-4xl font-bold">24/7</p>
-                    <p class="text-gray-500">Continuous Monitoring</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-16">
+                <div class="card rounded-2xl p-8 space-y-3 border-2 border-blue-500/20 hover:border-blue-500/40 transition-all">
+                    <p class="text-5xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">24/7</p>
+                    <p class="text-gray-400 font-medium">Continuous Monitoring</p>
                 </div>
-                <div class="space-y-2">
-                    <p class="text-4xl font-bold">Instant</p>
-                    <p class="text-gray-500">Ticket Creation</p>
+                <div class="card rounded-2xl p-8 space-y-3 border-2 border-purple-500/20 hover:border-purple-500/40 transition-all">
+                    <p class="text-5xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Instant</p>
+                    <p class="text-gray-400 font-medium">Ticket Creation</p>
                 </div>
-                <div class="space-y-2">
-                    <p class="text-4xl font-bold accent-blue">Intelligent</p>
-                    <p class="text-gray-500">Issue Classification</p>
+                <div class="card rounded-2xl p-8 space-y-3 border-2 border-cyan-500/20 hover:border-cyan-500/40 transition-all">
+                    <p class="text-5xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">AI-Powered</p>
+                    <p class="text-gray-400 font-medium">Issue Classification</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- How It Works Section -->
+     <!-- How It Works Section -->
     <section id="how-it-works" class="py-24 px-6 border-t divider bg-black/30">
-        <div class="max-w-6xl mx-auto">
+        <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-5xl font-bold mb-4">How It Works</h2>
                 <p class="text-gray-600 text-lg">From feedback to action in seconds</p>
             </div>
 
             <!-- Flow Diagram -->
-            <div class="relative">
-                <!-- Step 1: Collection -->
-                <div class="flex flex-col md:flex-row items-center gap-8 mb-12">
-                    <div class="card rounded-xl p-8 flex-1">
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center shadow-lg flex-shrink-0">
-                                <i class="fas fa-comments text-white text-xl"></i>
-                            </div>
-                            <div>
-                                <span class="text-sm text-gray-500 uppercase tracking-wide">Step 1</span>
-                                <h3 class="text-2xl font-bold">Collect Feedback</h3>
-                            </div>
+            <div class="relative flex flex-col items-center">
+                <!-- Step 1: User Feedback -->
+                <div class="relative z-10">
+                    <div class="card rounded-2xl p-6 w-64 text-center shadow-xl border-2 border-blue-500/50">
+                        <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg mx-auto mb-3">
+                            <i class="fas fa-user text-white text-2xl"></i>
                         </div>
-                        <p class="text-gray-400">Users submit reviews, complaints, or feature requests through any channel</p>
+                        <h3 class="text-lg font-bold mb-1">User Reviews</h3>
+                        <p class="text-gray-400 text-sm">Feedback submitted</p>
                     </div>
-                  
                 </div>
 
-                <!-- Step 2: AI Analysis -->
-                <div class="flex flex-col md:flex-row items-center gap-8 mb-12">
-                    <div class="card rounded-xl p-8 flex-1">
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-lg flex items-center justify-center shadow-lg flex-shrink-0">
-                                <i class="fas fa-brain text-white text-xl"></i>
-                            </div>
-                            <div>
-                                <span class="text-sm text-gray-500 uppercase tracking-wide">Step 2</span>
-                                <h3 class="text-2xl font-bold">AI Analysis</h3>
-                            </div>
+                <!-- Arrow Down -->
+                <div class="flex flex-col items-center my-4">
+                    <div class="w-1 h-12 bg-gradient-to-b from-blue-500 to-purple-500"></div>
+                    <i class="fas fa-chevron-down text-2xl text-purple-500"></i>
+                </div>
+
+                <!-- Step 2: AI Processing -->
+                <div class="relative z-10">
+                    <div class="card rounded-2xl p-6 w-64 text-center shadow-xl border-2 border-purple-500/50">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg mx-auto mb-3">
+                            <i class="fas fa-brain text-white text-2xl"></i>
                         </div>
-                        <p class="text-gray-400">IntelliServe processes feedback and intelligently classifies it as either a support request or technical issue</p>
+                        <h3 class="text-lg font-bold mb-1">AI Analysis</h3>
+                        <p class="text-gray-400 text-sm">Intelligent classification</p>
                     </div>
+                </div>
+
+                <!-- Split Arrow -->
+                <div class="relative w-full h-24 my-6">
+                    <!-- Vertical line down from center -->
+                    <div class="absolute left-1/2 top-0 transform -translate-x-1/2 w-1 h-8 bg-purple-500"></div>
                     
+                    <!-- Horizontal line -->
+                    <div class="absolute top-8 left-1/4 right-1/4 h-1 bg-purple-500"></div>
+                    
+                    <!-- Left vertical line -->
+                    <div class="absolute left-1/4 top-8 w-1 h-14 bg-gradient-to-b from-purple-500 to-green-500"></div>
+                    
+                    <!-- Right vertical line -->
+                    <div class="absolute right-1/4 top-8 w-1 h-14 bg-gradient-to-b from-purple-500 to-orange-500"></div>
                 </div>
 
-                <!-- Step 3: Smart Routing -->
-                <div class="grid md:grid-cols-2 gap-8 mb-12">
-                    <!-- Support Path -->
-                    <div class="card rounded-xl p-8 border-2 border-green-500/30">
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center shadow-lg flex-shrink-0">
-                                <i class="fas fa-headset text-white text-xl"></i>
+                <!-- Step 3: Dual Path -->
+                <div class="grid md:grid-cols-2 gap-12 w-full max-w-5xl">
+                    <!-- Left Path: Support -->
+                    <div class="flex flex-col items-center space-y-6">
+                        <!-- Decision Node -->
+                        <div class="card rounded-2xl p-4 w-56 text-center shadow-xl border-2 border-green-500/50">
+                            <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center shadow-lg mx-auto mb-2">
+                                <i class="fas fa-question text-white text-xl"></i>
                             </div>
-                            <div>
-                                <span class="text-sm text-green-400 uppercase tracking-wide">Support Request</span>
-                                <h3 class="text-xl font-bold">Zendesk Ticket</h3>
+                            <p class="text-green-400 font-bold text-sm">Support Request?</p>
+                        </div>
+
+                        <!-- Arrow -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-1 h-8 bg-green-500"></div>
+                            <i class="fas fa-chevron-down text-xl text-green-500 mt-[-1rem]"></i>
+                        </div>
+
+                        <!-- Zendesk Action -->
+                        <div class="card rounded-2xl p-6 w-full text-center shadow-xl border-2 border-green-500/50 bg-green-500/5">
+                            <div class="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-lg mx-auto mb-3">
+                                <i class="fas fa-ticket-alt text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-bold mb-2 text-green-400">Create Zendesk Ticket</h3>
+                            <div class="space-y-2 text-left">
+                                <div class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 text-sm"></i>
+                                    <p class="text-gray-400 text-sm">Generate support ticket</p>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 text-sm"></i>
+                                    <p class="text-gray-400 text-sm">Assign to support team</p>
+                                </div>
                             </div>
                         </div>
-                        <ul class="space-y-2 text-gray-400 text-sm">
-                            <li class="flex items-start gap-2">
-                                <i class="fas fa-check text-green-500 mt-1"></i>
-                                <span>Create support ticket in Zendesk</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <i class="fas fa-check text-green-500 mt-1"></i>
-                                <span>Send email to customer: "Your support ticket has been created"</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <i class="fas fa-check text-green-500 mt-1"></i>
-                                <span>Assign to support team</span>
-                            </li>
-                        </ul>
+
+                        <!-- Arrow -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-1 h-8 bg-green-500"></div>
+                            <i class="fas fa-chevron-down text-xl text-green-500 mt-[-1rem]"></i>
+                        </div>
+
+                        <!-- Email Customer -->
+                        <div class="card rounded-2xl p-5 w-full text-center shadow-xl border-2 border-green-500/30">
+                            <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center shadow-lg mx-auto mb-3">
+                                <i class="fas fa-envelope text-white text-lg"></i>
+                            </div>
+                            <h4 class="font-bold mb-1 text-sm">Email Customer</h4>
+                            <p class="text-gray-400 text-xs">"Support ticket created"</p>
+                        </div>
                     </div>
 
-                    <!-- Technical Path -->
-                    <div class="card rounded-xl p-8 border-2 border-orange-500/30">
-                        <div class="flex items-center gap-4 mb-4">
-                            <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center shadow-lg flex-shrink-0">
+                    <!-- Right Path: Technical -->
+                    <div class="flex flex-col items-center space-y-6">
+                        <!-- Decision Node -->
+                        <div class="card rounded-2xl p-4 w-56 text-center shadow-xl border-2 border-orange-500/50">
+                            <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center shadow-lg mx-auto mb-2">
                                 <i class="fas fa-bug text-white text-xl"></i>
                             </div>
-                            <div>
-                                <span class="text-sm text-orange-400 uppercase tracking-wide">Bug/Issue</span>
-                                <h3 class="text-xl font-bold">Jira Issue</h3>
+                            <p class="text-orange-400 font-bold text-sm">Bug/Technical Issue?</p>
+                        </div>
+
+                        <!-- Arrow -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-1 h-8 bg-orange-500"></div>
+                            <i class="fas fa-chevron-down text-xl text-orange-500 mt-[-1rem]"></i>
+                        </div>
+
+                        <!-- Jira Action -->
+                        <div class="card rounded-2xl p-6 w-full text-center shadow-xl border-2 border-orange-500/50 bg-orange-500/5">
+                            <div class="w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg mx-auto mb-3">
+                                <i class="fab fa-jira text-white text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-bold mb-2 text-orange-400">Create Jira Issue</h3>
+                            <div class="space-y-2 text-left">
+                                <div class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-orange-500 mt-1 text-sm"></i>
+                                    <p class="text-gray-400 text-sm">Open prioritized issue</p>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <i class="fas fa-check-circle text-orange-500 mt-1 text-sm"></i>
+                                    <p class="text-gray-400 text-sm">Assign to engineering</p>
+                                </div>
                             </div>
                         </div>
-                        <ul class="space-y-2 text-gray-400 text-sm">
-                            <li class="flex items-start gap-2">
-                                <i class="fas fa-check text-orange-500 mt-1"></i>
-                                <span>Create issue in Jira with priority</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <i class="fas fa-check text-orange-500 mt-1"></i>
-                                <span>Send email to product team: "Bug reported in product"</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <i class="fas fa-check text-orange-500 mt-1"></i>
-                                <span>Assign to engineering team</span>
-                            </li>
-                        </ul>
+
+                        <!-- Arrow -->
+                        <div class="flex flex-col items-center">
+                            <div class="w-1 h-8 bg-orange-500"></div>
+                            <i class="fas fa-chevron-down text-xl text-orange-500 mt-[-1rem]"></i>
+                        </div>
+
+                        <!-- Email Product Team -->
+                        <div class="card rounded-2xl p-5 w-full text-center shadow-xl border-2 border-orange-500/30">
+                            <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-lg flex items-center justify-center shadow-lg mx-auto mb-3">
+                                <i class="fas fa-envelope text-white text-lg"></i>
+                            </div>
+                            <h4 class="font-bold mb-1 text-sm">Email Product Team</h4>
+                            <p class="text-gray-400 text-xs">"Bug reported in product"</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Step 4: Resolution -->
-                <div class="card rounded-xl p-8 text-center">
-                    <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center shadow-lg mx-auto mb-4">
-                        <i class="fas fa-check-circle text-white text-xl"></i>
+                <!-- Convergence Arrow -->
+                <div class="relative w-full h-28 my-8">
+                    <!-- Left vertical line up -->
+                    <div class="absolute left-1/4 top-0 w-1 h-12 bg-gradient-to-b from-green-500 to-cyan-500"></div>
+                    
+                    <!-- Right vertical line up -->
+                    <div class="absolute right-1/4 top-0 w-1 h-12 bg-gradient-to-b from-orange-500 to-cyan-500"></div>
+                    
+                    <!-- Horizontal line -->
+                    <div class="absolute top-12 left-1/4 right-1/4 h-1 bg-cyan-500"></div>
+                    
+                    <!-- Center vertical line down -->
+                    <div class="absolute left-1/2 top-12 transform -translate-x-1/2 w-1 h-12 bg-cyan-500"></div>
+                    <i class="fas fa-chevron-down text-2xl text-cyan-500 absolute left-1/2 bottom-0 transform -translate-x-1/2"></i>
+                </div>
+
+                <!-- Final Step: Resolution -->
+                <div class="relative z-10">
+                    <div class="card rounded-2xl p-8 w-80 text-center shadow-xl border-2 border-cyan-500/50 bg-cyan-500/5">
+                        <div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg mx-auto mb-4">
+                            <i class="fas fa-check-circle text-white text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Issue Resolved</h3>
+                        <p class="text-gray-400 text-sm">Teams work efficiently on categorized issues</p>
                     </div>
-                    <span class="text-sm text-gray-500 uppercase tracking-wide">Step 4</span>
-                    <h3 class="text-2xl font-bold mb-2">Quick Resolution</h3>
-                    <p class="text-gray-400 max-w-2xl mx-auto">Teams work on properly categorized, prioritized issues while customers stay informed throughout the process</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="py-24 px-6 border-t divider">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-5xl font-bold text-center mb-16">Powered by Advanced Intelligence</h2>
+    <section id="features" class="py-32 px-6 border-t divider relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-blue-500/5 via-purple-500/5 to-transparent"></div>
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="text-center mb-20">
+                <h2 class="text-6xl font-bold mb-4">
+                    <span class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Powered by Advanced</span>
+                    <br/><span class="text-white">Intelligence</span>
+                </h2>
+                <p class="text-gray-400 text-lg mt-4">Next-generation AI capabilities for modern support teams</p>
+            </div>
             
-            <div class="grid md:grid-cols-2 gap-8 mb-16">
-                <div class="card rounded-xl p-8">
-                    <div class="w-12 h-12 bg-black rounded-lg flex items-center justify-center mb-6">
-                        <i class="fas fa-magic text-white text-xl"></i>
+            <div class="grid md:grid-cols-2 gap-6 mb-20">
+                <div class="card rounded-2xl p-10 border-2 border-blue-500/20 hover:border-blue-500/40 transition-all group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fas fa-magic text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Intelligent Routing</h3>
-                    <p class="text-gray-400">Automatically distinguishes technical issues from general support requests and routes them to the right teams without manual triage.</p>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Intelligent Routing</h3>
+                    <p class="text-gray-400 leading-relaxed">Automatically distinguishes technical issues from general support requests and routes them to the right teams without manual triage.</p>
                 </div>
 
-                <div class="card rounded-xl p-8">
-                    <div class="w-12 h-12 bg-black rounded-lg flex items-center justify-center mb-6">
-                        <i class="fas fa-zap text-white text-xl"></i>
+                <div class="card rounded-2xl p-10 border-2 border-purple-500/20 hover:border-purple-500/40 transition-all group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fas fa-zap text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Rapid Automation</h3>
-                    <p class="text-gray-600">Engineering teams receive clearly defined, priority-based Jira tasks while support gets instantly generated Zendesk tickets.</p>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Rapid Automation</h3>
+                    <p class="text-gray-400 leading-relaxed">Engineering teams receive clearly defined, priority-based Jira tasks while support gets instantly generated Zendesk tickets.</p>
                 </div>
 
-                <div class="card rounded-xl p-8">
-                    <div class="w-12 h-12 bg-black rounded-lg flex items-center justify-center mb-6">
-                        <i class="fas fa-bell text-white text-xl"></i>
+                <div class="card rounded-2xl p-10 border-2 border-green-500/20 hover:border-green-500/40 transition-all group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fas fa-bell text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Customer Notifications</h3>
-                    <p class="text-gray-600">Complete with instant customer notifications to close the communication loop and improve satisfaction.</p>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Customer Notifications</h3>
+                    <p class="text-gray-400 leading-relaxed">Complete with instant customer notifications to close the communication loop and improve satisfaction.</p>
                 </div>
 
-                <div class="card rounded-xl p-8">
-                    <div class="w-12 h-12 bg-black rounded-lg flex items-center justify-center mb-6">
-                        <i class="fas fa-chart-line text-white text-xl"></i>
+                <div class="card rounded-2xl p-10 border-2 border-orange-500/20 hover:border-orange-500/40 transition-all group">
+                    <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="fas fa-chart-line text-white text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Scale Support Operations</h3>
-                    <p class="text-gray-600">Transform scattered feedback into structured tasks, enabling companies to scale support operations effortlessly.</p>
+                    <h3 class="text-2xl font-bold mb-4 text-white">Scale Support Operations</h3>
+                    <p class="text-gray-400 leading-relaxed">Transform scattered feedback into structured tasks, enabling companies to scale support operations effortlessly.</p>
                 </div>
             </div>
 
             <!-- Main Benefits -->
-            <div class="card border divider rounded-xl p-12">
-                <h3 class="text-2xl font-bold mb-8 text-center">Why Choose IntelliServe?</h3>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="flex gap-4">
+            <div class="card border-2 border-cyan-500/20 rounded-2xl p-12 bg-gradient-to-br from-cyan-500/5 to-blue-500/5">
+                <h3 class="text-3xl font-bold mb-10 text-center text-white">Why Choose IntelliServe?</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="flex gap-5 group">
                         <div class="flex-shrink-0">
-                            <div class="flex items-center justify-center h-10 w-10 rounded-lg bg-black">
-                                <i class="fas fa-check text-white text-sm"></i>
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 shadow-lg group-hover:scale-110 transition-transform">
+                                <i class="fas fa-check text-white"></i>
                             </div>
                         </div>
                         <div>
-                            <h4 class="font-semibold mb-1">Reduce Response Time</h4>
-                            <p class="text-gray-600 text-sm">Automation reduces manual triage by up to 90%</p>
+                            <h4 class="font-bold mb-2 text-white text-lg">Reduce Response Time</h4>
+                            <p class="text-gray-400">Automation reduces manual triage by up to 90%</p>
                         </div>
                     </div>
-                    <div class="flex gap-4">
+                    <div class="flex gap-5 group">
                         <div class="flex-shrink-0">
-                            <div class="flex items-center justify-center h-10 w-10 rounded-lg bg-black">
-                                <i class="fas fa-check text-white text-sm"></i>
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 shadow-lg group-hover:scale-110 transition-transform">
+                                <i class="fas fa-check text-white"></i>
                             </div>
                         </div>
                         <div>
-                            <h4 class="font-semibold mb-1">Prevent Overlooked Issues</h4>
-                            <p class="text-gray-600 text-sm">Every concern is tracked and prioritized</p>
+                            <h4 class="font-bold mb-2 text-white text-lg">Prevent Overlooked Issues</h4>
+                            <p class="text-gray-400">Every concern is tracked and prioritized</p>
                         </div>
                     </div>
-                    <div class="flex gap-4">
+                    <div class="flex gap-5 group">
                         <div class="flex-shrink-0">
-                            <div class="flex items-center justify-center h-10 w-10 rounded-lg bg-black">
-                                <i class="fas fa-check text-white text-sm"></i>
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-gradient-to-br from-green-500 to-green-600 shadow-lg group-hover:scale-110 transition-transform">
+                                <i class="fas fa-check text-white"></i>
                             </div>
                         </div>
                         <div>
-                            <h4 class="font-semibold mb-1">Improve Product Quality</h4>
-                            <p class="text-gray-600 text-sm">Structured insights drive better product decisions</p>
+                            <h4 class="font-bold mb-2 text-white text-lg">Improve Product Quality</h4>
+                            <p class="text-gray-400">Structured insights drive better product decisions</p>
                         </div>
                     </div>
-                    <div class="flex gap-4">
+                    <div class="flex gap-5 group">
                         <div class="flex-shrink-0">
-                            <div class="flex items-center justify-center h-10 w-10 rounded-lg bg-black">
-                                <i class="fas fa-check text-white text-sm"></i>
+                            <div class="flex items-center justify-center h-12 w-12 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 shadow-lg group-hover:scale-110 transition-transform">
+                                <i class="fas fa-check text-white"></i>
                             </div>
                         </div>
                         <div>
-                            <h4 class="font-semibold mb-1">Boost Customer Satisfaction</h4>
-                            <p class="text-gray-600 text-sm">Faster, smarter responses lead to happier customers</p>
+                            <h4 class="font-bold mb-2 text-white text-lg">Boost Customer Satisfaction</h4>
+                            <p class="text-gray-400">Faster, smarter responses lead to happier customers</p>
                         </div>
                     </div>
                 </div>
@@ -337,11 +422,14 @@
     </section>
 
     <!-- Chat Section -->
-    <section id="chat-section" class="py-24 px-6 border-t divider">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-5xl font-bold mb-4">Experience IntelliServe</h2>
-                <p class="text-gray-600 text-lg">Watch our demo video and chat with our AI agent to see how it transforms customer feedback into actionable insights</p>
+    <section id="chat-section" class="py-32 px-6 border-t divider bg-gradient-to-b from-transparent to-purple-500/5">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-6xl font-bold mb-6">
+                    <span class="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">Experience</span>
+                    <br/><span class="text-white">IntelliServe</span>
+                </h2>
+                <p class="text-gray-400 text-xl max-w-3xl mx-auto leading-relaxed">Watch our demo video and chat with our AI agent to see how it transforms customer feedback into actionable insights</p>
             </div>
             
             <!-- Demo Video -->
@@ -368,21 +456,24 @@
     </section>
 
     <!-- Team Section -->
-    <section id="team" class="py-24 px-6 border-t divider bg-vercel">
+    <section id="team" class="py-32 px-6 border-t divider bg-gradient-to-b from-blue-500/5 to-transparent">
         <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-5xl font-bold mb-4">Meet Our Team</h2>
-                <p class="text-gray-600 text-lg">The talented people behind IntelliServe</p>
+            <div class="text-center mb-20">
+                <h2 class="text-6xl font-bold mb-6">
+                    <span class="text-white">Meet Our</span>
+                    <br/><span class="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Team</span>
+                </h2>
+                <p class="text-gray-400 text-xl">The talented people behind IntelliServe</p>
             </div>
             
             <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-8">
                 <!-- Team Member 1 -->
-                <div class="text-center">
-                    <div class="mb-4 mx-auto w-32 h-32 rounded-full overflow-hidden shadow-lg bg-gray-200">
+                <div class="text-center group">
+                    <div class="mb-6 mx-auto w-36 h-36 rounded-full overflow-hidden shadow-2xl bg-gray-200 ring-4 ring-transparent group-hover:ring-blue-500/30 transition-all transform group-hover:scale-105">
                         <img src="https://raw.githubusercontent.com/M786453/IntelliServe/main/src/ahtesham.png" alt="Muhammad Umer" class="w-full h-full object-cover">
                     </div>
-                    <h3 class="text-xl font-bold mb-1">Ahtesham Sarwar</h3>
-                    <p class="text-gray-600 text-sm">Software Engineer</p>
+                    <h3 class="text-xl font-bold mb-2 text-white">Ahtesham Sarwar</h3>
+                    <p class="text-gray-400 text-sm font-medium">Software Engineer</p>
                 </div>
 
                 <!-- Team Member 5 -->
@@ -453,14 +544,18 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="bg-vercel py-24 px-6 border-t divider">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-5xl font-bold mb-6">Ready to Transform Your Customer Support?</h2>
-            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+    <section class="bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-cyan-500/10 py-32 px-6 border-t divider relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5"></div>
+        <div class="max-w-5xl mx-auto text-center relative z-10">
+            <h2 class="text-6xl md:text-7xl font-bold mb-8">
+                <span class="text-white">Ready to Transform</span><br/>
+                <span class="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">Your Customer Support?</span>
+            </h2>
+            <p class="text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
                 Let IntelliServe handle your customer feedback triage and watch your response times drop and satisfaction scores rise.
             </p>
-            <button onclick="clickStartChat()" class="button-primary px-8 py-3 rounded-lg font-medium transition-all">
-                <i class="fas fa-comments mr-2"></i>Start Free
+            <button onclick="clickStartChat()" class="button-primary px-10 py-4 rounded-xl font-semibold text-lg transition-all transform hover:scale-105 shadow-2xl">
+                <i class="fas fa-comments mr-3"></i>Start Free Trial
             </button>
         </div>
     </section>
