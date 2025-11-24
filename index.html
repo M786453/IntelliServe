@@ -6,6 +6,8 @@
     <title>IntelliServe - Intelligent Customer Feedback Triage</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -119,7 +121,7 @@
             </div>
 
             <!-- Stats -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-16">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-16 hero-stats">
                 <div class="card rounded-2xl p-8 space-y-3 border-2 border-blue-500/20 hover:border-blue-500/40 transition-all">
                     <p class="text-5xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">24/7</p>
                     <p class="text-gray-400 font-medium">Continuous Monitoring</p>
@@ -649,6 +651,509 @@
                 }
             }, 500);
         }
+
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        window.addEventListener('load', function() {
+            // Hero section animations - only on initial page load
+            gsap.from('nav', {
+                y: -100,
+                opacity: 0,
+                duration: 1,
+                ease: 'power3.out'
+            });
+
+            gsap.from('.inline-block span', {
+                scale: 0,
+                opacity: 0,
+                duration: 0.6,
+                delay: 0.3,
+                ease: 'back.out(1.7)'
+            });
+
+            const heroSection = document.querySelector('section.min-h-screen');
+            if (heroSection) {
+                const heroH1 = heroSection.querySelector('h1');
+                if (heroH1) {
+                    gsap.from(heroH1, {
+                        y: 50,
+                        opacity: 0,
+                        duration: 1,
+                        delay: 0.5,
+                        ease: 'power3.out'
+                    });
+                }
+
+                const heroP = heroSection.querySelector('h1 + p');
+                if (heroP) {
+                    gsap.from(heroP, {
+                        y: 30,
+                        opacity: 0,
+                        duration: 0.8,
+                        delay: 0.8,
+                        ease: 'power2.out'
+                    });
+                }
+
+                const heroButtons = heroSection.querySelectorAll('.flex.flex-col button');
+                if (heroButtons.length) {
+                    gsap.fromTo(heroButtons,
+                        { scale: 0, opacity: 0 },
+                        {
+                            scale: 1,
+                            opacity: 1,
+                            duration: 0.6,
+                            delay: 1.2,
+                            stagger: 0.2,
+                            ease: 'back.out(1.7)'
+                        }
+                    );
+                }
+
+                const statCards = heroSection.querySelectorAll('.hero-stats .card');
+                if (statCards.length) {
+                    gsap.fromTo(statCards,
+                        { y: 50, opacity: 0 },
+                        {
+                            y: 0,
+                            opacity: 1,
+                            duration: 0.8,
+                            delay: 1.5,
+                            stagger: 0.2,
+                            ease: 'power3.out'
+                        }
+                    );
+                }
+            }
+
+            // How It Works section with ScrollTrigger
+            const howItWorksH2 = document.querySelector('#how-it-works h2');
+            if (howItWorksH2) {
+                gsap.fromTo(howItWorksH2, 
+                    { y: 50, opacity: 0 },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.8,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: '#how-it-works',
+                            start: 'top 80%',
+                            toggleActions: 'play none none none'
+                        }
+                    }
+                );
+            }
+
+            const howItWorksP = document.querySelector('#how-it-works .text-center p');
+            if (howItWorksP) {
+                gsap.fromTo(howItWorksP,
+                    { y: 30, opacity: 0 },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.6,
+                        delay: 0.2,
+                        ease: 'power2.out',
+                        scrollTrigger: {
+                            trigger: '#how-it-works',
+                            start: 'top 80%',
+                            toggleActions: 'play none none none'
+                        }
+                    }
+                );
+            }
+
+            const flowCards = document.querySelectorAll('#how-it-works .card');
+            if (flowCards.length) {
+                flowCards.forEach((card, index) => {
+                    gsap.fromTo(card,
+                        { scale: 0, opacity: 0 },
+                        {
+                            scale: 1,
+                            opacity: 1,
+                            duration: 0.6,
+                            ease: 'back.out(1.7)',
+                            scrollTrigger: {
+                                trigger: card,
+                                start: 'top 85%',
+                                toggleActions: 'play none none none'
+                            }
+                        }
+                    );
+                });
+            }
+
+            const arrows = document.querySelectorAll('#how-it-works .fa-chevron-down');
+            if (arrows.length) {
+                arrows.forEach((arrow, index) => {
+                    gsap.fromTo(arrow,
+                        { y: -20, opacity: 0 },
+                        {
+                            y: 0,
+                            opacity: 1,
+                            duration: 0.5,
+                            ease: 'bounce.out',
+                            scrollTrigger: {
+                                trigger: arrow,
+                                start: 'top 90%',
+                                toggleActions: 'play none none none'
+                            }
+                        }
+                    );
+                });
+            }
+
+            // Animate connector lines
+            const verticalLines = document.querySelectorAll('#how-it-works .w-1');
+            if (verticalLines.length) {
+                verticalLines.forEach((line) => {
+                    gsap.fromTo(line,
+                        { scaleY: 0, opacity: 0 },
+                        {
+                            scaleY: 1,
+                            opacity: 1,
+                            duration: 0.4,
+                            ease: 'power2.out',
+                            scrollTrigger: {
+                                trigger: line,
+                                start: 'top 90%',
+                                toggleActions: 'play none none none'
+                            }
+                        }
+                    );
+                });
+            }
+
+            const horizontalLines = document.querySelectorAll('#how-it-works .h-1');
+            if (horizontalLines.length) {
+                horizontalLines.forEach((line) => {
+                    gsap.fromTo(line,
+                        { scaleX: 0, opacity: 0 },
+                        {
+                            scaleX: 1,
+                            opacity: 1,
+                            duration: 0.4,
+                            ease: 'power2.out',
+                            scrollTrigger: {
+                                trigger: line,
+                                start: 'top 90%',
+                                toggleActions: 'play none none none'
+                            }
+                        }
+                    );
+                });
+            }
+
+            // Features section
+            const featuresH2 = document.querySelector('#features h2');
+            if (featuresH2) {
+                gsap.fromTo(featuresH2,
+                    { scale: 0.8, opacity: 0 },
+                    {
+                        scale: 1,
+                        opacity: 1,
+                        duration: 0.8,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: '#features',
+                            start: 'top 80%',
+                            toggleActions: 'play none none none'
+                        }
+                    }
+                );
+            }
+
+            const featureCards = document.querySelectorAll('#features .grid .card');
+            if (featureCards.length) {
+                featureCards.forEach((card, index) => {
+                    gsap.fromTo(card,
+                        { y: 80, opacity: 0 },
+                        {
+                            y: 0,
+                            opacity: 1,
+                            duration: 0.8,
+                            delay: 0.3 + (index * 0.15),
+                            ease: 'power3.out',
+                            scrollTrigger: {
+                                trigger: '#features',
+                                start: 'top 80%',
+                                toggleActions: 'play none none none'
+                            }
+                        }
+                    );
+                });
+            }
+
+            const featureIcons = document.querySelectorAll('#features .w-16.h-16');
+            if (featureIcons.length) {
+                featureIcons.forEach((icon, index) => {
+                    gsap.fromTo(icon,
+                        { rotate: 360, scale: 0 },
+                        {
+                            rotate: 0,
+                            scale: 1,
+                            duration: 0.8,
+                            delay: 0.5 + (index * 0.15),
+                            ease: 'back.out(1.7)',
+                            scrollTrigger: {
+                                trigger: '#features',
+                                start: 'top 80%',
+                                toggleActions: 'play none none none'
+                            }
+                        }
+                    );
+                });
+            }
+
+            // Benefits section
+            const benefitItems = document.querySelectorAll('#features .border-2.border-cyan-500 .flex.gap-5');
+            if (benefitItems.length) {
+                benefitItems.forEach((item, index) => {
+                    gsap.fromTo(item,
+                        { x: -50, opacity: 0 },
+                        {
+                            x: 0,
+                            opacity: 1,
+                            duration: 0.6,
+                            delay: index * 0.1,
+                            ease: 'power2.out',
+                            scrollTrigger: {
+                                trigger: '#features .border-2.border-cyan-500',
+                                start: 'top 80%',
+                                toggleActions: 'play none none none'
+                            }
+                        }
+                    );
+                });
+            }
+
+            // Chat section
+            const chatH2 = document.querySelector('#chat-section h2');
+            if (chatH2) {
+                gsap.fromTo(chatH2,
+                    { scale: 0.8, opacity: 0 },
+                    {
+                        scale: 1,
+                        opacity: 1,
+                        duration: 0.8,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: '#chat-section',
+                            start: 'top 80%',
+                            toggleActions: 'play none none none'
+                        }
+                    }
+                );
+            }
+
+            const chatIframe = document.querySelector('#chat-section iframe');
+            if (chatIframe) {
+                gsap.fromTo(chatIframe,
+                    { scale: 0.9, opacity: 0 },
+                    {
+                        scale: 1,
+                        opacity: 1,
+                        duration: 1,
+                        delay: 0.3,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: '#chat-section',
+                            start: 'top 80%',
+                            toggleActions: 'play none none none'
+                        }
+                    }
+                );
+            }
+
+            // Team section
+            const teamH2 = document.querySelector('#team h2');
+            if (teamH2) {
+                gsap.fromTo(teamH2,
+                    { y: 50, opacity: 0 },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.8,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: '#team',
+                            start: 'top 80%',
+                            toggleActions: 'play none none none'
+                        }
+                    }
+                );
+            }
+
+            const teamMembers = document.querySelectorAll('#team .grid > div');
+            if (teamMembers.length) {
+                teamMembers.forEach((member, index) => {
+                    gsap.fromTo(member,
+                        { y: 60, opacity: 0 },
+                        {
+                            y: 0,
+                            opacity: 1,
+                            duration: 0.8,
+                            delay: 0.3 + (index * 0.1),
+                            ease: 'power3.out',
+                            scrollTrigger: {
+                                trigger: '#team',
+                                start: 'top 80%',
+                                toggleActions: 'play none none none'
+                            }
+                        }
+                    );
+                });
+            }
+
+            const profileImages = document.querySelectorAll('#team .rounded-full');
+            if (profileImages.length) {
+                profileImages.forEach((img, index) => {
+                    gsap.fromTo(img,
+                        { scale: 0, rotation: 180 },
+                        {
+                            scale: 1,
+                            rotation: 0,
+                            duration: 0.8,
+                            delay: 0.5 + (index * 0.1),
+                            ease: 'back.out(1.7)',
+                            scrollTrigger: {
+                                trigger: '#team',
+                                start: 'top 80%',
+                                toggleActions: 'play none none none'
+                            }
+                        }
+                    );
+                });
+            }
+
+            // Sponsors section
+            const sponsorsH2 = document.querySelector('#sponsors h2');
+            if (sponsorsH2) {
+                gsap.fromTo(sponsorsH2,
+                    { y: 40, opacity: 0 },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.8,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: '#sponsors',
+                            start: 'top 80%',
+                            toggleActions: 'play none none none'
+                        }
+                    }
+                );
+            }
+
+            const sponsorLogos = document.querySelectorAll('#sponsors .grid > div');
+            if (sponsorLogos.length) {
+                sponsorLogos.forEach((logo, index) => {
+                    gsap.fromTo(logo,
+                        { scale: 0, opacity: 0 },
+                        {
+                            scale: 1,
+                            opacity: 1,
+                            duration: 0.6,
+                            delay: 0.3 + (index * 0.15),
+                            ease: 'back.out(1.7)',
+                            scrollTrigger: {
+                                trigger: '#sponsors',
+                                start: 'top 80%',
+                                toggleActions: 'play none none none'
+                            }
+                        }
+                    );
+                });
+            }
+
+            // CTA section
+            const ctaSection = document.querySelector('.bg-gradient-to-br.from-blue-500');
+            if (ctaSection) {
+                const ctaH2 = ctaSection.querySelector('h2');
+                if (ctaH2) {
+                    gsap.fromTo(ctaH2,
+                        { scale: 0.8, opacity: 0 },
+                        {
+                            scale: 1,
+                            opacity: 1,
+                            duration: 0.8,
+                            ease: 'power3.out',
+                            scrollTrigger: {
+                                trigger: ctaSection,
+                                start: 'top 80%',
+                                toggleActions: 'play none none none'
+                            }
+                        }
+                    );
+                }
+
+                const ctaP = ctaSection.querySelector('p');
+                if (ctaP) {
+                    gsap.fromTo(ctaP,
+                        { y: 30, opacity: 0 },
+                        {
+                            y: 0,
+                            opacity: 1,
+                            duration: 0.6,
+                            delay: 0.2,
+                            ease: 'power2.out',
+                            scrollTrigger: {
+                                trigger: ctaSection,
+                                start: 'top 80%',
+                                toggleActions: 'play none none none'
+                            }
+                        }
+                    );
+                }
+
+                const ctaButton = ctaSection.querySelector('button');
+                if (ctaButton) {
+                    gsap.fromTo(ctaButton,
+                        { scale: 0, opacity: 0 },
+                        {
+                            scale: 1,
+                            opacity: 1,
+                            duration: 0.6,
+                            delay: 0.4,
+                            ease: 'back.out(1.7)',
+                            scrollTrigger: {
+                                trigger: ctaSection,
+                                start: 'top 80%',
+                                toggleActions: 'play none none none'
+                            }
+                        }
+                    );
+                }
+            }
+
+            // Continuous floating animation for nav logo
+            const navLogo = document.querySelector('nav .w-10.h-10');
+            if (navLogo) {
+                gsap.to(navLogo, {
+                    y: -10,
+                    duration: 2,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: 'power1.inOut'
+                });
+            }
+
+            // Pulse animation for CTA button (after initial animation)
+            setTimeout(() => {
+                const finalCtaButton = document.querySelector('.bg-gradient-to-br.from-blue-500 button');
+                if (finalCtaButton) {
+                    gsap.to(finalCtaButton, {
+                        boxShadow: '0 0 40px rgba(59, 130, 246, 0.6)',
+                        duration: 1.5,
+                        repeat: -1,
+                        yoyo: true,
+                        ease: 'power1.inOut'
+                    });
+                }
+            }, 2000);
+        });
     </script>
 </body>
 </html>
