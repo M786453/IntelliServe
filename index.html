@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IntelliServe - Intelligent Customer Feedback Triage</title>
+    <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/M786453/IntelliServe/main/src/favicon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -82,7 +83,7 @@
     <nav class="fixed w-full top-0 z-50 backdrop-blur-sm bg-black/80 border-b divider">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center shadow-lg">
+                <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center shadow-lg nav-logo">
                     <i class="fas fa-robot text-white text-xl"></i>
                 </div>
                 <span class="text-2xl font-bold accent-blue">IntelliServe</span>
@@ -1129,16 +1130,16 @@
             }
 
             // Continuous floating animation for nav logo
-            const navLogo = document.querySelector('nav .w-10.h-10');
-            if (navLogo) {
-                gsap.to(navLogo, {
-                    y: -10,
-                    duration: 2,
-                    repeat: -1,
-                    yoyo: true,
-                    ease: 'power1.inOut'
-                });
-            }
+            // const navLogo = document.querySelector('nav .w-10.h-10');
+            // if (navLogo) {
+            //     gsap.to(navLogo, {
+            //         y: -10,
+            //         duration: 2,
+            //         repeat: -1,
+            //         yoyo: true,
+            //         ease: 'power1.inOut'
+            //     });
+            // }
 
             // Pulse animation for CTA button (after initial animation)
             setTimeout(() => {
